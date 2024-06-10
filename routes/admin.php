@@ -4,19 +4,19 @@ use Admin\PhpWeb3014\Controllers\Admin\DashboardController;
 use Admin\PhpWeb3014\Controllers\Admin\ProductController;
 use Admin\PhpWeb3014\Controllers\Admin\UserController;
 
-// $router->before('GET|POST', '/admin/*.*', function() {
+$router->before('GET|POST', '/admin/*.*', function() {
 
-//     if (!is_logged()) {
-//         header('location: ' . url('auth/login') );
-//         exit();
-//     } 
+    if (!is_logged()) {
+        header('location: ' . url('auth/login') );
+        exit();
+    } 
 
-//     if (!is_admin()) {
-//         header('location: ' . url() );
-//         exit();
-//     }
+    if (!is_admin()) {
+        header('location: ' . url() );
+        exit();
+    }
     
-// });
+});
 
 $router->mount('/admin', function () use ($router) {
 

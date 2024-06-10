@@ -37,7 +37,7 @@ class AuthController extends Controller
                 $_SESSION['user'] = $user;
 
                 if ($user['type'] == 'admin') {
-                    header('Location: ' . url('admin/') );
+                    header('Location: ' . url('admin/products') );
                     exit;
                 }
                 

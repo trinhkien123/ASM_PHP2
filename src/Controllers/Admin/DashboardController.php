@@ -8,6 +8,8 @@ class DashboardController extends Controller
 {
     public function dasboard()
     {
-        $this->renderViewAdmin(__FUNCTION__);
+        $this->renderViewAdmin(__FUNCTION__.['
+        
+        ']);
     }
 }

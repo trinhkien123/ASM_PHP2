@@ -77,19 +77,8 @@ class Model
 
     public function insert(array $data)
     {
-        // $data = [
-        //     'name' => 'Ahihi',
-        //     'email' => 'keke@gnai.com',
-        //     'address' => 'HN'
-        // ];
-
         if (!empty($data)) {
             $query = $this->queryBuilder->insert($this->tableName);
-
-            // $query->setValue('name', '?')->setParameter(0, $data['name']);
-            // $query->setValue('email', '?')->setParameter(1, $data['email']);
-            // $query->setValue('address', '?')->setParameter(2, $data['address']);
-
             $index = 0;
             foreach($data as $key => $value) {
                 $query->setValue($key, '?')->setParameter($index, $value);
@@ -109,13 +98,6 @@ class Model
     {
         if (!empty($data)) {
             $query = $this->queryBuilder->update($this->tableName);
-
-            // $data = [
-            //     'name' => 'Ahihi',
-            //     'email' => 'keke@gnai.com',
-            //     'address' => 'HN'
-            // ];
-
             $index = 0;
             foreach($data as $key => $value) {
                 $query->set($key, '?')->setParameter($index, $value);
